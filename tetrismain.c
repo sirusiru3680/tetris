@@ -311,17 +311,15 @@ int main(void) {
 			}
 		}
 		if (GetAsyncKeyState(0x52) & 0x8000) { //회전
-			if ((double)time(NULL) - delaytime >= 0.1) {
-				if (WallCrashEvent(RIGHT) == 0) {
-					if (WallCrashEvent(LEFT) == 0) {
-						if (CrashEvent() == 0) {
-							rotate = (rotate + 1) % 4;
-							DrawBoard();
-							delaytime = (double)time(NULL);
-						}
+			if (WallCrashEvent(RIGHT) == 0) {
+				if (WallCrashEvent(LEFT) == 0) {
+					if (CrashEvent() == 0) {
+						otate = (rotate + 1) % 4;
+						DrawBoard();
+						delaytime = (double)time(NULL);
 					}
 				}
-			}
+			
 		}
 
 
